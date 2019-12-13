@@ -1,13 +1,15 @@
-<h1> Usuarios </h1>>
+<h1> Usuarios </h1>
 
-<table>
+<table *ngIf="responseUsers"> 
     <thead>
         <td>Nome</td>
         <td>Sobrenome</td>  
     </thead>
     <tbody>
-        <tr>
-            <td>Fulano</td>
+        <tr  *ngFor="let user of responseUsers.data">
+            <td>{{user.first_name}}</td>
+            
+            
         </tr>
     </tbody>
 </table>
