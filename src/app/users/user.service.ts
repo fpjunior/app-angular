@@ -10,14 +10,22 @@ export class UserService {
 
   private url = "https://reqres.in/api/users";
 
-  constructor(private https: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
   getUsers(): Observable<ResponseUsers> {
-    return this.https.get<ResponseUsers>(this.url);
+    return this.http.get<ResponseUsers>(this.url);
 
   }
-  createUser(request: RequestCreate): Observable<RResponseCreate> {
-    return this.https.post<RequestCreate>(this.url, request);
+  createUser(request: RequestCreate): Observable<ResponseCreate> {
+    return this.http.post<ResponseCreate>(this.url, request);
   }
+  
+  getUser(id: string): Observable<ResponseUser> {
+    const _url = `${this.url}/$(id)`;
+    return this.http.get<ResponseUser>(_url);
   }
-
+ updateUser(id: string, body: RequestUpdate): Observable<ResponseCreate> {
+  const _url = `${this.url}/$(id)`;
+   return this.http.put<ResponseUpdate>(_url, request);
+ }
+}

@@ -20,9 +20,27 @@ export interface User {
         job: string;
     }
 
-    export interface RResponseCreate {
+    export interface ResponseCreate {
         name: string;
         job: string;
         id: string;
         createdAt: Date;
+    }
+
+    //modelos para o get user
+
+    export interface ResponseUser {
+        data: User
+    }
+
+       //modelos para update
+       export interface RequestUpdate {
+        name: string;
+        job: string;
+    }
+
+    export interface ResponseUpdate {
+        name: string;
+        job: string;
+        updatedAt: Date;
     }
