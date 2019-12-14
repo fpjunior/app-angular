@@ -11,7 +11,7 @@ export class CreateUserComponent implements OnInit {
  
 request: RequestCreate = {
   name: '',
-  job:''
+  job: ''
 }
  response: ResponseCreate
   constructor(private userService: UserService) { }

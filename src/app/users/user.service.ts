@@ -10,6 +10,7 @@ export class UserService {
 
   private url = "https://reqres.in/api/users";
 
+
   constructor(private http: HttpClient) { }
 
   getUsers(): Observable<ResponseUsers> {
@@ -21,7 +22,7 @@ export class UserService {
   }
   
   getUser(id: string): Observable<ResponseUser> {
-    const _url = `${this.url}/$(id)`;
+    const _url = `${this.url}/${id}`;
 
     return this.http.get<ResponseUser>(_url);
   }
