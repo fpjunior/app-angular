@@ -31,4 +31,10 @@ update(){
     alert(`Atualizar: ${res.updatedAt}, Nome: ${res.name}, job:${res.job}`);
   });
 }
+
+delete(){
+  this.userService.deleteUser(this.id).subscribe(res => {
+    alert(`Atualizar: ${res.deletedAt}, Nome: ${res.name}, job:${res.job}`);
+  });
+}
 }
